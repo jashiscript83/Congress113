@@ -1,0 +1,37 @@
+img{
+    width: 10%;
+}
+body {
+    
+    background-color: gainsboro;
+}
+nav {
+    background-color: blue;
+    
+        
+}
+
+.butt {
+ 
+    font-weight: bold;
+}
+
+
+
+.back {
+    font-size: 15px;
+    font-weight: bold;
+}
+.party {
+    
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+    
+.rights {
+     
+    text-align: center;
+    font-family:cursive;
+}   
