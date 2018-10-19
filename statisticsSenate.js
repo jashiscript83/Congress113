@@ -1,14 +1,186 @@
-var members = data.results[0].members
-var lessloyalty = []
-var moreloyalty = []
-var numberInd = []
-var numberRep = []
+var data;
+console.log(1);
 var numberDem = []
+var numberRep = []
+var numberInd = []
+var moreloyalty = []
+var lessloyalty = []
 var mostmissed = []
 var lessmissed = []
+var members;
+var z;
+var tenpercent;
+var statistics = {
+    "numberDem": 0,
+    "numberRep": 0,
+    "numberIndep": 0,
+    "voteAveragePartyD": 0,
+    "voteAveragePartyR": 0,
+    "Mostloyalty": 0,
+    "lessLoyalty": 0,
+    "mostVotesMissed": 0,
+    "lessVotesMissed": 0,
+
+}
+var least;
+var most;
+var loyalL;
+var loyalM;
+
+
+
+var data;
+console.log(1);
+var numberDem = []
+var numberRep = []
+var numberInd = []
+var moreloyalty = []
+var lessloyalty = []
+var mostmissed = []
+var lessmissed = []
+var members;
+var z;
+var tenpercent;
+var statistics = {
+    "numberDem": 0,
+    "numberRep": 0,
+    "numberIndep": 0,
+    "voteAveragePartyD": 0,
+    "voteAveragePartyR": 0,
+    "Mostloyalty": 0,
+    "lessLoyalty": 0,
+    "mostVotesMissed": 0,
+    "lessVotesMissed": 0,
+
+}
+var least;
+var most;
+var loyalL;
+var loyalM;
+comparecall()
+
+function comparecall(){
+    
+if (document.getElementById("SenatePage")!= null) {
+    fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
+    method: "GET",
+    headers: {
+        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+
+    }
+
+}).then(function (response) {
+    if (response.ok) {
+        console.log(2);
+
+        return response.json();
+
+    }
+
+}).then(function (json) {
+
+
+    data = json;
+    console.log(3);
+    console.log(data);
+    members = data.results[0].members;
+
+    z = members.length * 0.1;
+    tenpercent = Math.round(z);
+
+
+
+
+
+    allStatistics();
+    statistics.voteAveragePartyD = getSum(numberDem);
+    statistics.voteAveragePartyR = getSum(numberRep);
+
+    Mostloyalty();
+    statistics.Mostloyalty = moreloyalty;
+    Lessloyal();
+    statistics.lessLoyalty = lessloyalty;
+    mostmiss();
+    statistics.mostVotesMissed=mostmissed;
+    lessmiss();
+    statistics.lessVotesMissed=lessmissed;
+    
+    least = statistics.lessVotesMissed
+    most = statistics.mostVotesMissed
+    loyalL = statistics.lessLoyalty
+    loyalM = statistics.Mostloyalty
+    
+    callfunctions();
+    filltableinfi();
+   
+
+}).catch(function (error) {
+    console.log("Request failed:" + error.message);
+});
+      
+    }
+    if (document.getElementById("HousePage")!= null) {
+        fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
+    method: "GET",
+    headers: {
+        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+
+    }
+
+}).then(function (response) {
+    if (response.ok) {
+        console.log(2);
+
+        return response.json();
+
+    }
+
+}).then(function (json) {
+
+
+    data = json;
+    console.log(3);
+    console.log(data);
+    members = data.results[0].members;
+
+    z = members.length * 0.1;
+    tenpercent = Math.round(z);
+
+
+   
+
+
+    allStatistics();
+    statistics.voteAveragePartyD = getSum(numberDem);
+    statistics.voteAveragePartyR = getSum(numberRep);
+
+    Mostloyalty();
+    statistics.Mostloyalty = moreloyalty;
+    Lessloyal();
+    statistics.lessLoyalty = lessloyalty;
+    mostmiss();
+    statistics.mostVotesMissed=mostmissed;
+    lessmiss();
+    statistics.lessVotesMissed=lessmissed;
+    
+    least = statistics.lessVotesMissed
+    most = statistics.mostVotesMissed
+    loyalL = statistics.lessLoyalty
+    loyalM = statistics.Mostloyalty
+    
+    callfunctions();
+    filltableinfi();
+   
+
+}).catch(function (error) {
+    console.log("Request failed:" + error.message);
+});
+
+
+    }
+}
 
 function allStatistics() {
-
 
     for (var r = 0; r < members.length; r++) {
 
@@ -25,13 +197,17 @@ function allStatistics() {
         }
     }
 
+    statistics.numberDem = numberDem.length;
+    statistics.numberRep = numberRep.length;
+    statistics.numberIndep = numberInd.length;
+
 }
 
 
-allStatistics()
 
 
 function getSum(array) {
+
     var averageD = 0;
     var x = 0;
     for (var r = 0; r < array.length; r++) {
@@ -39,13 +215,13 @@ function getSum(array) {
 
         averageD = (averageD + averD)
         x = averageD / array.length
-        averagefinal = Math.round(x);
+        var averagefinal = Math.round(x);
     }
     return averagefinal;
 
 }
-var z = members.length * 0.1;
-var tenpercent = Math.round(z)
+//var z = members.length * 0.1;
+//var tenpercent = Math.round(z);
 
 function Mostloyalty() {
 
@@ -75,7 +251,6 @@ function Mostloyalty() {
 
 
 }
-Mostloyalty()
 
 function Lessloyal() {
 
@@ -106,7 +281,7 @@ function Lessloyal() {
 
 }
 
-Lessloyal()
+
 
 function mostmiss() {
 
@@ -133,10 +308,9 @@ function mostmiss() {
     }
 
 
-
 }
 
-mostmiss()
+
 
 function lessmiss() {
 
@@ -164,23 +338,22 @@ function lessmiss() {
 
 }
 
-lessmiss()
 
-var statistics = {
-    "numberDem": numberDem.length,
-    "numberRep": numberRep.length,
-    "numberIndep": numberInd.length,
-    "voteAveragePartyD": getSum(numberDem),
-    "voteAveragePartyR": getSum(numberRep),
-    "Mostloyalty": moreloyalty,
-    "lessLoyalty": lessloyalty,
-    "mostVotesMissed": mostmissed,
-    "lessVotesMissed": lessmissed,
-}
+//var statistics = {
+//    "numberDem": numberDem.length,
+//    "numberRep": numberRep.length,
+//    "numberIndep": numberInd.length,
+//    "voteAveragePartyD": getSum(numberDem),
+//    "voteAveragePartyR": getSum(numberRep),
+//    "Mostloyalty": moreloyalty,
+//    "lessLoyalty": lessloyalty,
+//    "mostVotesMissed": mostmissed,
+//    "lessVotesMissed": lessmissed,
+//}
 
 
 function filltableinfi() {
-
+    
     var rep1 = document.getElementById("re1");
     rep1.textContent = statistics.numberRep;
 
@@ -198,35 +371,33 @@ function filltableinfi() {
 
 
 }
-filltableinfi()
+//
+//
+//var least = statistics.lessVotesMissed
+//var most = statistics.mostVotesMissed
+//var loyalL = statistics.lessLoyalty
+//var loyalM = statistics.Mostloyalty
 
-var least = statistics.lessVotesMissed
-var most = statistics.mostVotesMissed
-var loyalL = statistics.lessLoyalty
-var loyalM = statistics.Mostloyalty
-
-function callfunctions(){
-    if(document.getElementById("table2") && document.getElementById("table3")!= null)
-        {      
-          leastengaged()              
-          mostengaged()
-        }  
-    if (document.getElementById("tableloyal") && document.getElementById("tableMloyal")!=null)
-    {
+function callfunctions() {
+    if (document.getElementById("table2") && document.getElementById("table3") != null) {
+        leastengaged()
+        mostengaged()
+    }
+    if (document.getElementById("tableloyal") && document.getElementById("tableMloyal") != null) {
         leastloyal()
         mostloyal()
-        
+
     }
-    
+
 }
-callfunctions()
+
 
 function leastengaged() {
 
 
-        var table2 = document.getElementById("table2")
-        console.log(table2)
-        var tbody = document.createElement("tbody");
+    var table2 = document.getElementById("table2")
+    console.log(table2)
+    var tbody = document.createElement("tbody");
     for (var r = 0; r < least.length; r++) {
 
         var n = least[r].first_name;
@@ -253,141 +424,141 @@ function leastengaged() {
 
         var columpercent = document.createElement("td");
         columpercent.textContent = least[r].missed_votes_pct
-        
+
         row.appendChild(columpercent);
-        
+
         tbody.appendChild(row);
 
 
     }
-        table2.appendChild(tbody);
+    table2.appendChild(tbody);
 
 
 }
 
-function mostengaged(){
-    
-         var tbody = document.createElement("tbody");
-   
-   for(var r = 0; r < most.length;r++){
-        
-        
-        
+function mostengaged() {
+
+    var tbody = document.createElement("tbody");
+
+    for (var r = 0; r < most.length; r++) {
+
+
+
         var n = most[r].first_name;
         var m = most[r].middle_name;
         var l = most[r].last_name;
-    
-       
-        if (m == null){
-         var name=(n+" "+l)}else{
-         var name=(n+" "+m+" "+l);
-   
-         }
-        
-         var row=  document.createElement("tr"); 
-         var table3=document.getElementById("table3");
-         var columName=  document.createElement("td");
-         columName.textContent=name
-         row.appendChild(columName);
-         
-        var columNumber=  document.createElement("td");
-        columNumber.textContent=most[r].missed_votes
+
+
+        if (m == null) {
+            var name = (n + " " + l)
+        } else {
+            var name = (n + " " + m + " " + l);
+
+        }
+
+        var row = document.createElement("tr");
+        var table3 = document.getElementById("table3");
+        var columName = document.createElement("td");
+        columName.textContent = name
+        row.appendChild(columName);
+
+        var columNumber = document.createElement("td");
+        columNumber.textContent = most[r].missed_votes
         row.appendChild(columNumber);
-        
-       
-        var columpercent=  document.createElement("td");
-       columpercent.textContent=most[r].missed_votes_pct
+
+
+        var columpercent = document.createElement("td");
+        columpercent.textContent = most[r].missed_votes_pct
         row.appendChild(columpercent);
-       
-       
         tbody.appendChild(row);
-   }
-        table3.appendChild(tbody);
+    }
+    table3.appendChild(tbody);
 
- 
-   }
 
-function leastloyal(){
-    
-         var tbody = document.createElement("tbody");
-   
-   for(var r = 0; r < loyalL.length;r++){
-        
-        
-        
+}
+
+function leastloyal() {
+
+    var tbody = document.createElement("tbody");
+
+    for (var r = 0; r < loyalL.length; r++) {
+
+
+
         var n = loyalL[r].first_name;
         var m = loyalL[r].middle_name;
         var l = loyalL[r].last_name;
-    
-       
-        if (m == null){
-         var name=(n+" "+l)}else{
-         var name=(n+" "+m+" "+l);
-   
-         }
-        
-         var row=  document.createElement("tr"); 
-         var table4=document.getElementById("tableloyal");
-         var columName=  document.createElement("td");
-         columName.textContent=name;
-         row.appendChild(columName);
-         
-        var columNumber=  document.createElement("td");
-        columNumber.textContent=loyalL[r].total_votes;
+
+
+        if (m == null) {
+            var name = (n + " " + l)
+        } else {
+            var name = (n + " " + m + " " + l);
+
+        }
+
+        var row = document.createElement("tr");
+        var table4 = document.getElementById("tableloyal");
+        var columName = document.createElement("td");
+        columName.textContent = name;
+        row.appendChild(columName);
+
+        var columNumber = document.createElement("td");
+        columNumber.textContent = loyalL[r].total_votes;
         row.appendChild(columNumber);
-        
-       
-        var columpercent=  document.createElement("td");
-       columpercent.textContent=loyalL[r].votes_with_party_pct;
+
+
+        var columpercent = document.createElement("td");
+        columpercent.textContent = loyalL[r].votes_with_party_pct;
         row.appendChild(columpercent);
         tbody.appendChild(row);
-          
-       
-   }
-      table4.appendChild(tbody);
 
- 
-   }
 
-function mostloyal(){
-    
-         var tbody = document.createElement("tbody");
-   
-   for(var r = 0; r < loyalM.length;r++){
-        
-        
-        
+    }
+    table4.appendChild(tbody);
+
+
+}
+
+function mostloyal() {
+
+    var tbody = document.createElement("tbody");
+
+    for (var r = 0; r < loyalM.length; r++) {
+
+
+
         var n = loyalM[r].first_name;
         var m = loyalM[r].middle_name;
         var l = loyalM[r].last_name;
-    
-       
-        if (m == null){
-         var name=(n+" "+l)}else{
-         var name=(n+" "+m+" "+l);
-   
-         }
-        
-         var row=  document.createElement("tr"); 
-         var table5=document.getElementById("tableMloyal");
-         var columName=  document.createElement("td");
-         columName.textContent=name;
-         row.appendChild(columName);
-         
-        var columNumber=  document.createElement("td");
-        columNumber.textContent=loyalM[r].total_votes;
+
+
+        if (m == null) {
+            var name = (n + " " + l)
+        } else {
+            var name = (n + " " + m + " " + l);
+
+        }
+
+        var row = document.createElement("tr");
+        var table5 = document.getElementById("tableMloyal");
+        var columName = document.createElement("td");
+        columName.textContent = name;
+        row.appendChild(columName);
+
+        var columNumber = document.createElement("td");
+        columNumber.textContent = loyalM[r].total_votes;
         row.appendChild(columNumber);
-        
-       
-        var columpercent=  document.createElement("td");
-       columpercent.textContent=loyalM[r].votes_with_party_pct;
+
+
+        var columpercent = document.createElement("td");
+        columpercent.textContent = loyalM[r].votes_with_party_pct;
         row.appendChild(columpercent);
         tbody.appendChild(row);
-          
-       
-   }
-      table5.appendChild(tbody);
 
- 
-   }
 
+    }
+    table5.appendChild(tbody);
+
+
+}
