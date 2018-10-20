@@ -9,6 +9,9 @@ var mostmissed = []
 var lessmissed = []
 var members;
 var z;
+
+
+
 var tenpercent;
 var statistics = {
     "numberDem": 0,
@@ -52,6 +55,8 @@ var statistics = {
     "mostVotesMissed": 0,
     "lessVotesMissed": 0,
 
+
+
 }
 var least;
 var most;
@@ -85,12 +90,16 @@ if (document.getElementById("SenatePage")!= null) {
     console.log(data);
     members = data.results[0].members;
 
+   
+  
+
     z = members.length * 0.1;
     tenpercent = Math.round(z);
 
 
 
-
+  
+    
 
     allStatistics();
     statistics.voteAveragePartyD = getSum(numberDem);
@@ -105,6 +114,7 @@ if (document.getElementById("SenatePage")!= null) {
     lessmiss();
     statistics.lessVotesMissed=lessmissed;
     
+        
     least = statistics.lessVotesMissed
     most = statistics.mostVotesMissed
     loyalL = statistics.lessLoyalty
@@ -112,8 +122,10 @@ if (document.getElementById("SenatePage")!= null) {
     
     callfunctions();
     filltableinfi();
+    
+        
+      
    
-
 }).catch(function (error) {
     console.log("Request failed:" + error.message);
 });
@@ -141,15 +153,18 @@ if (document.getElementById("SenatePage")!= null) {
     data = json;
     console.log(3);
     console.log(data);
+   
+  
     members = data.results[0].members;
-
+   
+            
+            
     z = members.length * 0.1;
     tenpercent = Math.round(z);
 
 
    
-
-
+ 
     allStatistics();
     statistics.voteAveragePartyD = getSum(numberDem);
     statistics.voteAveragePartyR = getSum(numberRep);
@@ -170,7 +185,12 @@ if (document.getElementById("SenatePage")!= null) {
     
     callfunctions();
     filltableinfi();
-   
+
+            
+           
+        
+ 
+            
 
 }).catch(function (error) {
     console.log("Request failed:" + error.message);
@@ -396,7 +416,7 @@ function leastengaged() {
 
 
     var table2 = document.getElementById("table2")
-    console.log(table2)
+ 
     var tbody = document.createElement("tbody");
     for (var r = 0; r < least.length; r++) {
 
@@ -562,3 +582,96 @@ function mostloyal() {
 
 
 }
+
+
+function createTable2(){
+    
+ 
+        var tbody = document.createElement("tbody");
+ var table=document.getElementById("house-data")
+
+    var option= document.getElementById("option")
+     membersFiltered = [];
+    var select=document.getElementById("select") 
+    
+    var input = document.querySelectorAll('input[name="party"]:checked');
+    
+   
+   if (document.getElementsByTagName("tbody")[0]!=null){ table.removeChild(document.getElementsByTagName("tbody")[0])}
+
+    for (var i=0 ;i < input.length; i++){
+        for (var d=0 ;d < members.length; d++ ){ 
+
+            if ((input[i].value == members[d].party) &&
+        (select.value == members[d].state)){ 
+                
+               membersFiltered.push(members[d])
+            
+            
+            }
+       
+           if((input[i].value == members[d].party)&&(select.value=="ALL")){
+               
+               membersFiltered.push(members[d])
+            
+           }
+           
+        }
+        
+        }
+         
+       
+    for(var r = 0; r < membersFiltered.length;r++){
+        
+        
+        var row=  document.createElement("tr"); 
+        var n = membersFiltered[r].first_name;
+        var m = membersFiltered[r].middle_name;
+        var l = membersFiltered[r].last_name;
+        var u = membersFiltered [r].url;  
+        
+       
+        if (m == null){
+         var name=(n+" "+l)}else{
+         var name=(n+" "+m+" "+l);
+     
+                   
+         }
+         
+         var link= document.createElement("a");
+         link.href=u;
+         link.innerHTML=name;
+                    
+        var columName=  document.createElement("td");
+         columName.appendChild(link)
+        row.appendChild(columName);
+       
+        var columParty=  document.createElement("td");
+        columParty.textContent=membersFiltered[r].party
+        row.appendChild(columParty);
+   
+       
+        var columState=  document.createElement("td");
+        columState.textContent=membersFiltered[r].state
+        row.appendChild(columState);
+        
+               
+        var columYears=  document.createElement("td");
+        columYears.textContent=membersFiltered[r].seniority
+        row.appendChild(columYears);
+        
+             
+        var columVotes=  document.createElement("td");
+        columVotes.textContent=membersFiltered[r].total_votes
+        row.appendChild(columVotes);
+    
+        tbody.appendChild(row);
+     
+     }
+     table.appendChild(tbody);
+
+
+        
+    }
+
+

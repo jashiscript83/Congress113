@@ -1,12 +1,93 @@
-var members=data.results[0].members
-console.log(members[0]);
-var table2= document.getElementById("house-data");
+var data;
+console.log(1);
+var members;
+
+comparecall()
+function comparecall(){
+    
+        
+if (document.getElementById("SenatePage")!= null) {
+    fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
+    method: "GET",
+    headers: {
+        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+
+    }
+
+}).then(function (response) {
+    if (response.ok) {
+        console.log(2);
+
+        return response.json();
+
+    }
+
+}).then(function (json) {
+
+
+    data = json;
+    console.log(3);
+    console.log(data);
+    members = data.results[0].members;
+
+        
+    tables();         
+    uniqueStates();
+  
+        
+      
+   
+}).catch(function (error) {
+    console.log("Request failed:" + error.message);
+});
+      
+    }
+    
+if (document.getElementById("HousePage")!= null) {
+    fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
+    method: "GET",
+    headers: {
+        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+
+    }
+    
+
+}).then(function(response){
+		if (response.ok){
+			 console.log(2);
+   
+
+	return response.json();
+        }
+            
+         
+
+
+}).then(function(json){
+	
+    data = json;
+    console.log(3);
+    console.log(data);
+    members = data.results[0].members;
+
+            tables();
+            uniqueStates();
+    
+		
+}).catch(function (error){
+	 console.log("Request failed:" + error.message);
+});
+
+}
+
+}
+ 
 
 var membersFiltered = [];
 
 function createTable2(){
         var tbody = document.createElement("tbody");
-
+var table= document.getElementById("house-data");
     var option= document.getElementById("option")
      membersFiltered = [];
     var select=document.getElementById("select") 
@@ -14,7 +95,7 @@ function createTable2(){
     var input = document.querySelectorAll('input[name="party"]:checked');
     
    
-   if (document.getElementsByTagName("tbody")[0]!=null){ table2.removeChild(document.getElementsByTagName("tbody")[0])}
+   if (document.getElementsByTagName("tbody")[0]!=null){ table.removeChild(document.getElementsByTagName("tbody")[0])}
 
     for (var i=0 ;i < input.length; i++){
         for (var d=0 ;d < members.length; d++ ){ 
@@ -85,36 +166,20 @@ function createTable2(){
         tbody.appendChild(row);
      
      }
-     table2.appendChild(tbody);
+     table.appendChild(tbody);
 
 
         
     }
 
-//createTable2() 
 
 
 
-
-function table() {
+function tables() {
     var tbody = document.createElement("tbody");
-    
+    var table= document.getElementById("house-data")
        
-   
-    
-//
-//    
-//             for (var i=0 ;i < uniqueState.length; i++){
-//        for (var d=0 ;d < members.length; d++ ){ 
-//
-//            if (uniqueState[i].value == members[d].state){ 
-//                
-//               stateFiltered.push(members[d])
-//            }
-//        }
-//             }
-//             
-//    console.log(stateFiltered)
+
     
     
 
@@ -165,19 +230,17 @@ function table() {
         tbody.appendChild(row);
      
      }
-     table2.appendChild(tbody);
+     table.appendChild(tbody);
 
              }
 
 
-table()
 
-var membersFiltered2=[]
-   
+
 function uniqueStates(){
     
    
-// membersFiltered2=[]
+
                 
     var uniqueState=[];
            var count=0;
@@ -227,30 +290,10 @@ function uniqueStates(){
     
 }
 
-//function filterbystate(){
-//       
-//          var select=document.getElementById("select") 
-//    membersFiltered2=[]
-//        for (var d=0 ;d < members.length; d++ ){ 
-//
-//            if (select.value == members[d].state){ 
-//                  
-//
-//                membersFiltered2.push(members[d])
-//             
-//            }        
-//     
-//        }
-//   
-//    
-//console.log(membersFiltered2)
-//    
-//    
-//    
-//}
+
 
   
-uniqueStates();
+
 
 
 
