@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-
+         
         membersFiltered: [],
         uniqueState: [],
         members: [],
@@ -10,7 +10,8 @@ var app = new Vue({
     },
     created: function () {
         console.log(this)
-         this.geturl();
+        document.body.className="loading"; 
+        this.geturl();
         this.getData();
 
     },
@@ -47,7 +48,8 @@ var app = new Vue({
                     data = json;
                     console.log(3);
                     console.log(data);
-                    app.members = data.results[0].members;
+                     document.body.className=""; 
+                 app.members = data.results[0].members;
                     app.membersoriginal = data.results[0].members;
                     app.uniqueStates();
                  
@@ -67,7 +69,7 @@ var app = new Vue({
             var input = document.querySelectorAll('input[name="party"]:checked');
             console.log(input)
             var select = document.getElementById("select")
-
+           
             for (var i = 0; i < input.length; i++) {
                 for (var d = 0; d < this.members.length; d++) {
                     console.log(input.length)
