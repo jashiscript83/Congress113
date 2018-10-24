@@ -1,122 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<meta charset="utf-8"> 
+
+<head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="senateData.css">
-       
-    </head>
-    
-    <body id="HousePage">
-        <div class="all">
-      
-               <div class="container">
-  <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
-  <div class="middle">
-      <div class="text"><p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a></div>
-  </div>
-</div>
-            <div class="block">
-        <div class="nav">
-              <nav class="navbar navbar-default">
-            <ul class="nav navbar-nav" >
-                  
-              <li><a  class= "butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
-              <li >
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="#">Congress 113</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   >
-                  <li ><a  class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
-                  <li ><a  class="dropdown-item"  href="house-starter-page.html">House</a></li>
-                </ul>
-              </li>
-        
-        
-              <li>
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="#">Attendance</a>
-               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   >
-                     <li ><a  class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
-                  <li ><a  class="dropdown-item"  href="houseAttendanceStarter-page.html">House</a></li>
-                </ul>
-                </li>
-              <li class="active">
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="#">Party Loyalty</a>
-                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   ><li ><a  class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
-                  <li ><a class="active"  class="dropdown-item"  href="housePartyLoyaltyStarter-page.html">House</a></li>
-                </ul>
-              </li>
-            </ul>
-                
-           
-        </nav>
-        </div>
-      
-        <div class="info">
-            <h2>Party Loyalty</h2>
-            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
-    	    
-            <h2>House at a glance</h2>
-         <table class="table table-striped"  >
-                <thead>
-                    <tr>
-                        <th>Party</th>
-                        <th>Number of Members</th>
-                        <th>% Voted with Party</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Republican</td>
-                        <td id="re1"></td>
-                        <td id="re2"></td>
-                    </tr>
-                    <tr>
-                        <td>Democrat</td>
-                        <td id="de1"></td>
-                        <td id="de2"></td>
-                    </tr>
-                    <tr>
-                        <td>Independent</td>
-                        <td id="in1"></td>
-                        <td id="in2"></td>
-                    </tr>
-                </tbody>
-            </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="senateData.css">
 
-            <h2>Least Loyal (Bottom 10% of Party)</h2>
-              <table  class="table table-striped" id="tableloyal">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number Party Votes</th>
-                        <th>% Party Votes</th>
-                    </tr>
-                </thead>
-               
-            </table>
+</head>
 
-            <h2>Most Loyal (Top 10% of Party)</h2>
-            <table class="table table-striped" id="tableMloyal">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number Party Votes</th>
-                        <th>% Party Votes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
-    	</div> 
-          <p class="rights" class="navbar navbar-default" >2016 TGIF/All Rights Reserved</p>
+<body id="HousePage">
+    <div class="all">
+
+        <div class="container">
+            <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">
+                    <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                </div>
             </div>
         </div>
+        <div class="block">
+            <div class="nav">
+                <nav class="navbar navbar-default">
+                    <ul class="nav navbar-nav">
+
+                        <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
+                        <li>
+                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Congress 113</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
+                                <li><a class="dropdown-item" href="house-starter-page.html">House</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
+                                <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
+                                <li><a class="active" class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                </nav>
+            </div>
+
+            <div class="info">
+                <h2>Party Loyalty</h2>
+                <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+
+                <h2>House at a glance</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Party</th>
+                            <th>Number of Members</th>
+                            <th>% Voted with Party</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Republican</td>
+                            <td id="re1"></td>
+                            <td id="re2"></td>
+                        </tr>
+                        <tr>
+                            <td>Democrat</td>
+                            <td id="de1"></td>
+                            <td id="de2"></td>
+                        </tr>
+                        <tr>
+                            <td>Independent</td>
+                            <td id="in1"></td>
+                            <td id="in2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Least Loyal (Bottom 10% of Party)</h2>
+                <table class="table table-striped" id="tableloyal">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number Party Votes</th>
+                            <th>% Party Votes</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+                <h2>Most Loyal (Top 10% of Party)</h2>
+                <table class="table table-striped" id="tableMloyal">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number Party Votes</th>
+                            <th>% Party Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
+        </div>
+    </div>
     <script src="statisticsSenate.js">
-    
-        
+
+
     </script>
 </body>
+
 </html>

@@ -64,137 +64,137 @@ var loyalL;
 var loyalM;
 comparecall()
 
-function comparecall(){
-    
-if (document.getElementById("SenatePage")!= null) {
-    fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
-    method: "GET",
-    headers: {
-        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+function comparecall() {
+
+    if (document.getElementById("SenatePage") != null) {
+        fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
+            method: "GET",
+            headers: {
+                'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+
+            }
+
+        }).then(function (response) {
+            if (response.ok) {
+                console.log(2);
+
+                return response.json();
+
+            }
+
+        }).then(function (json) {
+
+
+            data = json;
+            console.log(3);
+            console.log(data);
+            members = data.results[0].members;
+
+
+
+
+            z = members.length * 0.1;
+            tenpercent = Math.round(z);
+
+
+
+
+
+
+            allStatistics();
+            statistics.voteAveragePartyD = getSum(numberDem);
+            statistics.voteAveragePartyR = getSum(numberRep);
+
+            Mostloyalty();
+            statistics.Mostloyalty = moreloyalty;
+            Lessloyal();
+            statistics.lessLoyalty = lessloyalty;
+            mostmiss();
+            statistics.mostVotesMissed = mostmissed;
+            lessmiss();
+            statistics.lessVotesMissed = lessmissed;
+
+
+            least = statistics.lessVotesMissed
+            most = statistics.mostVotesMissed
+            loyalL = statistics.lessLoyalty
+            loyalM = statistics.Mostloyalty
+
+            callfunctions();
+            filltableinfi();
+
+
+
+
+        }).catch(function (error) {
+            console.log("Request failed:" + error.message);
+        });
 
     }
-
-}).then(function (response) {
-    if (response.ok) {
-        console.log(2);
-
-        return response.json();
-
-    }
-
-}).then(function (json) {
-
-
-    data = json;
-    console.log(3);
-    console.log(data);
-    members = data.results[0].members;
-
-   
-  
-
-    z = members.length * 0.1;
-    tenpercent = Math.round(z);
-
-
-
-  
-    
-
-    allStatistics();
-    statistics.voteAveragePartyD = getSum(numberDem);
-    statistics.voteAveragePartyR = getSum(numberRep);
-
-    Mostloyalty();
-    statistics.Mostloyalty = moreloyalty;
-    Lessloyal();
-    statistics.lessLoyalty = lessloyalty;
-    mostmiss();
-    statistics.mostVotesMissed=mostmissed;
-    lessmiss();
-    statistics.lessVotesMissed=lessmissed;
-    
-        
-    least = statistics.lessVotesMissed
-    most = statistics.mostVotesMissed
-    loyalL = statistics.lessLoyalty
-    loyalM = statistics.Mostloyalty
-    
-    callfunctions();
-    filltableinfi();
-    
-        
-      
-   
-}).catch(function (error) {
-    console.log("Request failed:" + error.message);
-});
-      
-    }
-    if (document.getElementById("HousePage")!= null) {
+    if (document.getElementById("HousePage") != null) {
         fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
-    method: "GET",
-    headers: {
-        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+            method: "GET",
+            headers: {
+                'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
 
-    }
+            }
 
-}).then(function (response) {
-    if (response.ok) {
-        console.log(2);
+        }).then(function (response) {
+            if (response.ok) {
+                console.log(2);
 
-        return response.json();
+                return response.json();
 
-    }
+            }
 
-}).then(function (json) {
-
-
-    data = json;
-    console.log(3);
-    console.log(data);
-   
-  
-    members = data.results[0].members;
-   
-            
-            
-    z = members.length * 0.1;
-    tenpercent = Math.round(z);
+        }).then(function (json) {
 
 
-   
- 
-    allStatistics();
-    statistics.voteAveragePartyD = getSum(numberDem);
-    statistics.voteAveragePartyR = getSum(numberRep);
+            data = json;
+            console.log(3);
+            console.log(data);
 
-    Mostloyalty();
-    statistics.Mostloyalty = moreloyalty;
-    Lessloyal();
-    statistics.lessLoyalty = lessloyalty;
-    mostmiss();
-    statistics.mostVotesMissed=mostmissed;
-    lessmiss();
-    statistics.lessVotesMissed=lessmissed;
-    
-    least = statistics.lessVotesMissed
-    most = statistics.mostVotesMissed
-    loyalL = statistics.lessLoyalty
-    loyalM = statistics.Mostloyalty
-    
-    callfunctions();
-    filltableinfi();
 
-            
-           
-        
- 
-            
+            members = data.results[0].members;
 
-}).catch(function (error) {
-    console.log("Request failed:" + error.message);
-});
+
+
+            z = members.length * 0.1;
+            tenpercent = Math.round(z);
+
+
+
+
+            allStatistics();
+            statistics.voteAveragePartyD = getSum(numberDem);
+            statistics.voteAveragePartyR = getSum(numberRep);
+
+            Mostloyalty();
+            statistics.Mostloyalty = moreloyalty;
+            Lessloyal();
+            statistics.lessLoyalty = lessloyalty;
+            mostmiss();
+            statistics.mostVotesMissed = mostmissed;
+            lessmiss();
+            statistics.lessVotesMissed = lessmissed;
+
+            least = statistics.lessVotesMissed
+            most = statistics.mostVotesMissed
+            loyalL = statistics.lessLoyalty
+            loyalM = statistics.Mostloyalty
+
+            callfunctions();
+            filltableinfi();
+
+
+
+
+
+
+
+        }).catch(function (error) {
+            console.log("Request failed:" + error.message);
+        });
 
 
     }
@@ -264,6 +264,10 @@ function Mostloyalty() {
         if (x == moreloyalty[moreloyalty.length - 1].votes_with_party_pct) {
             moreloyalty.push(members[r])
         }
+        if (moreloyalty[moreloyalty.length - 1].votes_with_party_pct = moreloyalty[moreloyalty.length - 1].votes_with_party_pct) {
+            return false
+        }
+
 
 
     }
@@ -293,6 +297,9 @@ function Lessloyal() {
 
         if (x == lessloyalty[lessloyalty.length - 1].votes_with_party_pct) {
             lessloyalty.push(members[r])
+        }
+        if (lessloyalty[lessloyalty.length - 1].votes_with_party_pct = lessloyalty[lessloyalty.length - 1].votes_with_party_pct) {
+            return false
         }
 
 
@@ -324,7 +331,9 @@ function mostmiss() {
             mostmissed.push(members[r])
         }
 
-
+if (mostmissed[mostmissed.length - 1].votes_with_party_pct = mostmissed[mostmissed.length - 1].votes_with_party_pct) {
+            return false
+        }
     }
 
 
@@ -353,6 +362,9 @@ function lessmiss() {
             lessmissed.push(members[r])
         }
 
+if (lessmissed[lessmissed.length - 1].votes_with_party_pct = lessmissed[lessmissed.length - 1].votes_with_party_pct) {
+            return false
+        }
 
     }
 
@@ -373,7 +385,7 @@ function lessmiss() {
 
 
 function filltableinfi() {
-    
+
     var rep1 = document.getElementById("re1");
     rep1.textContent = statistics.numberRep;
 
@@ -416,7 +428,7 @@ function leastengaged() {
 
 
     var table2 = document.getElementById("table2")
- 
+
     var tbody = document.createElement("tbody");
     for (var r = 0; r < least.length; r++) {
 
@@ -584,94 +596,95 @@ function mostloyal() {
 }
 
 
-function createTable2(){
-    
- 
-        var tbody = document.createElement("tbody");
- var table=document.getElementById("house-data")
+function createTable2() {
 
-    var option= document.getElementById("option")
-     membersFiltered = [];
-    var select=document.getElementById("select") 
-    
+
+    var tbody = document.createElement("tbody");
+    var table = document.getElementById("house-data")
+
+    var option = document.getElementById("option")
+    membersFiltered = [];
+    var select = document.getElementById("select")
+
     var input = document.querySelectorAll('input[name="party"]:checked');
-    
-   
-   if (document.getElementsByTagName("tbody")[0]!=null){ table.removeChild(document.getElementsByTagName("tbody")[0])}
 
-    for (var i=0 ;i < input.length; i++){
-        for (var d=0 ;d < members.length; d++ ){ 
+
+    if (document.getElementsByTagName("tbody")[0] != null) {
+        table.removeChild(document.getElementsByTagName("tbody")[0])
+    }
+
+    for (var i = 0; i < input.length; i++) {
+        for (var d = 0; d < members.length; d++) {
 
             if ((input[i].value == members[d].party) &&
-        (select.value == members[d].state)){ 
-                
-               membersFiltered.push(members[d])
-            
-            
+                (select.value == members[d].state)) {
+
+                membersFiltered.push(members[d])
+
+
             }
-       
-           if((input[i].value == members[d].party)&&(select.value=="ALL")){
-               
-               membersFiltered.push(members[d])
-            
-           }
-           
-        }
-        
-        }
-         
-       
-    for(var r = 0; r < membersFiltered.length;r++){
-        
-        
-        var row=  document.createElement("tr"); 
-        var n = membersFiltered[r].first_name;
-        var m = membersFiltered[r].middle_name;
-        var l = membersFiltered[r].last_name;
-        var u = membersFiltered [r].url;  
-        
-       
-        if (m == null){
-         var name=(n+" "+l)}else{
-         var name=(n+" "+m+" "+l);
-     
-                   
-         }
-         
-         var link= document.createElement("a");
-         link.href=u;
-         link.innerHTML=name;
-                    
-        var columName=  document.createElement("td");
-         columName.appendChild(link)
-        row.appendChild(columName);
-       
-        var columParty=  document.createElement("td");
-        columParty.textContent=membersFiltered[r].party
-        row.appendChild(columParty);
-   
-       
-        var columState=  document.createElement("td");
-        columState.textContent=membersFiltered[r].state
-        row.appendChild(columState);
-        
-               
-        var columYears=  document.createElement("td");
-        columYears.textContent=membersFiltered[r].seniority
-        row.appendChild(columYears);
-        
-             
-        var columVotes=  document.createElement("td");
-        columVotes.textContent=membersFiltered[r].total_votes
-        row.appendChild(columVotes);
-    
-        tbody.appendChild(row);
-     
-     }
-     table.appendChild(tbody);
 
+            if ((input[i].value == members[d].party) && (select.value == "ALL")) {
 
-        
+                membersFiltered.push(members[d])
+
+            }
+
+        }
+
     }
 
 
+    for (var r = 0; r < membersFiltered.length; r++) {
+
+
+        var row = document.createElement("tr");
+        var n = membersFiltered[r].first_name;
+        var m = membersFiltered[r].middle_name;
+        var l = membersFiltered[r].last_name;
+        var u = membersFiltered[r].url;
+
+
+        if (m == null) {
+            var name = (n + " " + l)
+        } else {
+            var name = (n + " " + m + " " + l);
+
+
+        }
+
+        var link = document.createElement("a");
+        link.href = u;
+        link.innerHTML = name;
+
+        var columName = document.createElement("td");
+        columName.appendChild(link)
+        row.appendChild(columName);
+
+        var columParty = document.createElement("td");
+        columParty.textContent = membersFiltered[r].party
+        row.appendChild(columParty);
+
+
+        var columState = document.createElement("td");
+        columState.textContent = membersFiltered[r].state
+        row.appendChild(columState);
+
+
+        var columYears = document.createElement("td");
+        columYears.textContent = membersFiltered[r].seniority
+        row.appendChild(columYears);
+
+
+        var columVotes = document.createElement("td");
+        columVotes.textContent = membersFiltered[r].total_votes
+        row.appendChild(columVotes);
+
+        tbody.appendChild(row);
+
+    }
+    table.appendChild(tbody);
+
+
+
+}

@@ -1,101 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="utf-8"> 
+
+<head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="senateData.css">
-       
-        
-    </head>
-    
-    <body id="SenatePage">
-        <div class="all">
-             
-                    <div class="container">
-  <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
-  <div class="middle">
-      <div class="text"><p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a></div>
-  </div>
-</div>
-        <div class="block">
-        
-        <div class="nav">
-          <nav class="navbar navbar-default" >
-          <div>
-        
-        
-            <ul class="nav navbar-nav" >
-                
-              <li><a  class= "butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
-              <li class="active" >
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="house-starter-page.html">Congress 113</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   >
-                  <li class="active"  ><a  class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
-                  <li><a class="dropdown-item"  href="house-starter-page.html">House</a></li>
-                </ul>
-              </li>
-                
-              <li>
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="#">Attendance</a>
-               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   >
-                     <li ><a  class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
-                  <li ><a  class="dropdown-item"  href="houseAttendanceStarter-page.html">House</a></li>
-                </ul>
-                </li>
-              <li>
-                <a  class= "butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"href="#">Party Loyalty</a>
-                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"   ><li ><a  class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
-                  <li ><a  class="dropdown-item"  href="housePartyLoyaltyStarter-page.html">House</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>        
-        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="senateData.css">
 
-       
-        <div class="info" >
-            <h2>Senators</h2>
-            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
-    <div>
-        <div class="party">
-               <label>Filter Party by:</label>
-                    <div id="filterparty">
-                       <input checked onchange="createTable2()"  name="party" id="rep" value="R" type="checkbox"><label>Republican</label>
-                        <input checked  onchange="createTable2()" name="party" value="D" id="dem" type="checkbox"><label>Democrat</label>
-                        <input checked onchange="createTable2()"  name="party" id="indep" value="I" type="checkbox"><label>Independent</label>
-                    </div>
-                 </div>
-                
-       <label>Filter by State </label>
-        <select onchange="createTable2()" name="party" id="select">
 
-                    <option id="option">ALL</option>
-        
-        </select>
-              
-    </div>        
-    	
-            <table class="table table-striped" id="house-data">
-            <thead>
-                <th>Name</th>
-                <th>Party</th>
-                <th>State</th>
-                <th>Years in Office </th>
-                <th>%Votes w/Party</th>
-            </thead>
-        </table>
-        </div>
-                
-    <p class="rights" class="navbar navbar-default" >2016 TGIF/All Rights Reserved</p>
+</head>
+
+<body id="SenatePage">
+
+
+
+    <div id="app" class="all">
+
+        <div class="container">
+            <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">
+                    <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                </div>
             </div>
         </div>
-        <script src="mainhouse.js">
-        </script>
-  
-    
+        <div class="block">
+
+            <div class="nav">
+                <nav class="navbar navbar-default">
+                    <div>
+
+
+                        <ul class="nav navbar-nav">
+
+                            <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
+                            <li class="active">
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="house-starter-page.html">Congress 113</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li class="active"><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="house-starter-page.html">House</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+
+            <div class="info">
+                <h2>Senators</h2>
+                <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+                <div>
+                    <div class="party">
+                        <label>Filter Party by:</label>
+                        <div id="filterparty">
+                            <input  checked @change="createFilter" name="party" id="rep" value="R" type="checkbox"><label>Republican</label>
+                            <input  checked @change="createFilter" name="party" value="D" id="dem" type="checkbox"><label>Democrat</label>
+                            <input  checked @change="createFilter" name="party" id="indep" value="I" type="checkbox"><label>Independent</label>
+                        </div>
+                    </div>
+
+                    <label>Filter by State </label>
+                    <select  @change="createFilter" name="party" id="select">
+
+                        <option id="option">ALL</option>
+
+                    </select>
+
+                </div>
+
+                <table class="table table-striped" id="house-data">
+                    <thead>
+                        <th>Name</th>
+                        <th>Party</th>
+                        <th>State</th>
+                        <th>Years in Office </th>
+                        <th>%Votes w/Party</th>
+                    </thead>
+                    <tbody>
+                        <div>
+                            <tr v-for="value in members">
+
+                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                <td>{{value.party}}</td>
+                                <td>{{value.state}}</td>
+                                <td>{{value.seniority}}</td>
+                                <td>{{value.total_votes}}</td>
+                            </tr>
+                        </div>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <script src="mainhouseVUE.js">
+
+    </script>
+
+
 </body>
 </html>
