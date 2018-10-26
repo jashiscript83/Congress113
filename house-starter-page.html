@@ -12,103 +12,112 @@
 
 </head>
 
-<body >
+<body>
     <div id="app" class="allH">
         <div id="HousePage">
-        <div class="container">
-            <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
-            <div class="middle">
-                <div class="text">
-                    <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+            <div class="container">
+                <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text">
+                        <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="block">
-            <div class="nav">
+            <div class="block">
+                <div class="nav">
 
-                <nav class="navbar navbar-default">
-                    <div>
-                        <ul class="nav navbar-nav">
-
-                            <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
-                            <li>
-                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Congress 113</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
-                                    <li class="active"><a class="dropdown-item" href="house-starter-page.html">House</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
-                                    <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
-                                    <li><a class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="info">
-                <h2>Congressmen</h2>
-                <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
-                <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
-
-                <div>
-                    <div class="party">
-                        <label>Filter Party by:</label>
-                        <div id="filterparty">
-                            <input checked @click="createFilter" name="party" id="rep" value="R" type="checkbox"><label>Republican</label>
-                            <input  checked @click="createFilter" name="party" value="D" id="dem" type="checkbox"><label>Democrat</label>
-                            <input  checked  @click="createFilter" name="party" id="indep" value="I" type="checkbox"><label>Independent</label>
-                        </div>
-                    </div>
-
-                    <label>Filter by State </label>
-                    <select  @change="createFilter" name="party" id="select">
-
-                        <option id="option">ALL</option>
-
-                    </select>
-
-                </div>
-                        <div class="loading-bar"><h2>“Conformity is the jailer of freedom and the enemy of growth.” John F. Kennedy, 1961.</h2></div>
-
-
-                <table class="table table-striped" id="house-data">
-                    <thead>
-                        <th>Name</th>
-                        <th>Party</th>
-                        <th>State</th>
-                        <th>Years in Office </th>
-                        <th>%Votes w/Party</th>
-                    </thead>
-                    <tbody>
+                    <nav class="navbar navbar-light" style="background-color: #333;">
                         <div>
-                            <tr v-for="value in members">
+                            <ul class="nav navbar-nav">
 
-                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
-                                <td>{{value.party}}</td>
-                                <td>{{value.state}}</td>
-                                <td>{{value.seniority}}</td>
-                                <td>{{value.total_votes}}</td>
-                            </tr>
+                                <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
+                                <li>
+                                    <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Congress 113</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
+                                        <li class="active"><a class="dropdown-item" href="house-starter-page.html">House</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
+                                        <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
+                                        <li><a class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                    </tbody>
+                    </nav>
+                </div>
 
-                </table>
+                <div class="info">
+                    <h2>Congressmen</h2>
+                    <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+                    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+
+                    <div>
+                        <div class="party">
+                            <label>Filter Party by:</label>
+                            <div id="filterparty">
+                                <input checked @click="createFilter" name="party" id="rep" value="R" type="checkbox"><label>Republican</label>
+                                <input checked @click="createFilter" name="party" value="D" id="dem" type="checkbox"><label>Democrat</label>
+                                <input checked @click="createFilter" name="party" id="indep" value="I" type="checkbox"><label>Independent</label>
+                            </div>
+                        </div>
+
+                        <label>Filter by State </label>
+                        <select @change="createFilter" name="party" id="select">
+
+                            <option id="option">ALL</option>
+
+                        </select>
+
+                    </div>
+                    <div class="loading-bar">
+                        <h2>“Conformity is the jailer of freedom and the enemy of growth.” John F. Kennedy, 1961.</h2>
+                    </div>
+
+
+                    <table class="table table-striped" id="house-data">
+                        <thead>
+                            <th>Name</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Years in Office </th>
+                            <th>%Votes w/Party</th>
+                        </thead>
+                        <tbody>
+                            <div>
+                                <tr v-for="value in members">
+                                    <td>
+                                        <a v-bind:href=" value.url">
+                                            {{value.first_name}} {{value.middle_name}} {{value.last_name}}
+
+                                        </a>
+                                    </td>
+
+                                    <td>{{value.party}}</td>
+                                    <td>{{value.state}}</td>
+                                    <td>{{value.seniority}}</td>
+                                    <td>{{value.total_votes}}</td>
+
+                                </tr>
+
+                            </div>
+                        </tbody>
+
+                    </table>
+                </div>
+                <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
             </div>
-            <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
-        </div>
         </div>
     </div>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>

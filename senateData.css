@@ -2,6 +2,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
     grid-template-rows: 1fr 80fr 1fr;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #1a237e;
 }
 
 .loading-bar {
@@ -186,4 +190,10 @@ nav {
 .loading-bar h2{
     color:red;
     text-align: center;
+}
+.CongressBackground {
+    
+    
+    
+  
 }

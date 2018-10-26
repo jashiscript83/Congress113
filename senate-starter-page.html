@@ -29,7 +29,7 @@
         <div class="block">
 
             <div class="nav">
-                <nav class="navbar navbar-default">
+                <nav class="navbar navbar-light" style="background-color: #333;">
                     <div>
 
 
@@ -102,11 +102,15 @@
                         <div>
                             <tr v-for="value in members">
 
-                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+
+                                <td>
+                                    <a v-bind:href=" value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                </a>
                                 <td>{{value.party}}</td>
                                 <td>{{value.state}}</td>
                                 <td>{{value.seniority}}</td>
                                 <td>{{value.total_votes}}</td>
+
                             </tr>
                         </div>
                     </tbody>
@@ -125,4 +129,5 @@
 
 
 </body>
+
 </html>

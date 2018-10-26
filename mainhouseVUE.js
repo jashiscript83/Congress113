@@ -51,12 +51,17 @@ var app = new Vue({
                 app.membersoriginal = data.results[0].members;
                 app.uniqueStates();
 
+
+
+
+
             }).catch(function (error) {
                 console.log("Request failed:" + error.message);
             });
 
 
         },
+
         createFilter: function () {
             var count = 0;
             var found = false;
@@ -64,12 +69,16 @@ var app = new Vue({
             this.membersFiltered = [];
             var option = document.getElementById("option")
             var input = document.querySelectorAll('input[name="party"]:checked');
-            console.log(input)
+
             var select = document.getElementById("select")
+
+
+
 
             for (var i = 0; i < input.length; i++) {
                 for (var d = 0; d < this.members.length; d++) {
-                    console.log(input.length)
+
+
                     if ((input[i].value == this.members[d].party) &&
                         (select.value == this.members[d].state)) {
 
@@ -86,10 +95,12 @@ var app = new Vue({
                 }
 
             }
+
             this.members = this.membersFiltered
 
 
         },
+
 
         uniqueStates: function () {
 
