@@ -1,61 +1,61 @@
 var app = new Vue({
     el: '#app',
     data: {
-         
+
         membersFiltered: [],
         uniqueState: [],
         members: [],
         membersoriginal: [],
-        chamber:""
+        chamber: ""
     },
     created: function () {
         console.log(this)
-        document.body.className="loading"; 
+        document.body.className = "loading";
         this.geturl();
         this.getData();
 
     },
     methods: {
-        
-        geturl: function (){
-            if (document.getElementById("SenatePage") != null){
-                this.chamber="senate"
+
+        geturl: function () {
+            if (document.getElementById("SenatePage") != null) {
+                this.chamber = "senate"
             }
-           if (document.getElementById("HousePage") != null){
-               this.chamber="house"
-           }     
+            if (document.getElementById("HousePage") != null) {
+                this.chamber = "house"
+            }
         },
         getData: function () {
 
-             fetch("https://api.propublica.org/congress/v1/113/" + this.chamber +"/members.json", {
-                    method: "GET",
-                    headers: {
-                        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
+            fetch("https://api.propublica.org/congress/v1/113/" + this.chamber + "/members.json", {
+                method: "GET",
+                headers: {
+                    'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
 
-                    }
+                }
 
-                }).then(function (response) {
-                    if (response.ok) {
-                        console.log(2);
+            }).then(function (response) {
+                if (response.ok) {
+                    console.log(2);
 
-                        return response.json();
+                    return response.json();
 
-                    }
+                }
 
-                }).then(function (json) {
+            }).then(function (json) {
 
-                    console.log(this);
-                    data = json;
-                    console.log(3);
-                    console.log(data);
-                     document.body.className=""; 
-                 app.members = data.results[0].members;
-                    app.membersoriginal = data.results[0].members;
-                    app.uniqueStates();
-                 
-                }).catch(function (error) {
-                    console.log("Request failed:" + error.message);
-                });
+                console.log(this);
+                data = json;
+                console.log(3);
+                console.log(data);
+                document.body.className = "";
+                app.members = data.results[0].members;
+                app.membersoriginal = data.results[0].members;
+                app.uniqueStates();
+
+            }).catch(function (error) {
+                console.log("Request failed:" + error.message);
+            });
 
 
         },
@@ -69,7 +69,7 @@ var app = new Vue({
             var input = document.querySelectorAll('input[name="party"]:checked');
             console.log(input)
             var select = document.getElementById("select")
-           
+
             for (var i = 0; i < input.length; i++) {
                 for (var d = 0; d < this.members.length; d++) {
                     console.log(input.length)
@@ -89,8 +89,8 @@ var app = new Vue({
                 }
 
             }
-                this.members = this.membersFiltered
-               
+            this.members = this.membersFiltered
+
 
         },
 
@@ -124,7 +124,7 @@ var app = new Vue({
                 var found = false;
 
             }
-         
+
             var select = document.getElementById("select")
 
             for (var i = 0; i < this.uniqueState.length; ++i) {

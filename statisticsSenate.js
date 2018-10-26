@@ -396,7 +396,7 @@ function filltableinfi() {
     dem1.textContent = statistics.numberDem;
 
     var dem2 = document.getElementById("de2");
-    dem2.textContent = statistics.voteAveragePartyD;
+    dem2.textContent = statistics.voteAveragePartyDvoteAveragePartyD;
 
     var ind1 = document.getElementById("in1");
     ind1.textContent = statistics.numberIndep;

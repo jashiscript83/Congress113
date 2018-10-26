@@ -12,7 +12,7 @@
 </head>
 
 <body id="HousePage">
-    <div class="all">
+    <div id="app" class="all">
 
         <div class="container">
             <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
@@ -73,18 +73,18 @@
                     <tbody>
                         <tr>
                             <td>Republican</td>
-                            <td id="re1"></td>
-                            <td id="re2"></td>
+                            <td>{{numberRep.length}}</td>
+                            <td>{{statistics.voteAveragePartyR }}</td>
                         </tr>
                         <tr>
                             <td>Democrat</td>
-                            <td id="de1"></td>
-                            <td id="de2"></td>
+                            <td>{{numberDem.length}}</td>
+                            <td>{{statistics.voteAveragePartyD }}</td>
                         </tr>
                         <tr>
                             <td>Independent</td>
-                            <td id="in1"></td>
-                            <td id="in2"></td>
+                            <td>{{numberInd.length}}</td>
+                            <td>/</td>
                         </tr>
                     </tbody>
                 </table>
@@ -98,7 +98,17 @@
                             <th>% Party Votes</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr v-for="value in lessloyalty">
 
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.total_votes}}</td>
+                            <td>{{value.votes_with_party_pct}}</td>
+
+
+                        </tr>
+
+                    </tbody>
                 </table>
 
                 <h2>Most Loyal (Top 10% of Party)</h2>
@@ -110,18 +120,23 @@
                             <th>% Party Votes</th>
                         </tr>
                     </thead>
-                    <tbody>
+                     <tr v-for="value in moreloyalty">
 
-                    </tbody>
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.total_votes}}</td>
+                            <td>{{value.votes_with_party_pct}}</td>
+
+                        </tr>
+
                 </table>
             </div>
             <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
         </div>
     </div>
-    <script src="statisticsSenate.js">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
+    <script src="StatisticsVUE.js"></script>
 
-    </script>
 </body>
 
 </html>

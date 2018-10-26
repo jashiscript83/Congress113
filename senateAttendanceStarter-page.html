@@ -11,8 +11,9 @@
 
 </head>
 
-<body id="SenatePage">
-    <div class="all">
+<body >
+    <div id="app" class="all">
+    <div id="SenatePage">
         <div class="container">
             <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle">
@@ -74,23 +75,22 @@
                     <tbody>
                         <tr>
                             <td>Republican</td>
-                            <td id="re1"></td>
-                            <td id="re2"></td>
+                            <td>{{numberRep.length}}</td>
+                            <td>{{statistics.voteAveragePartyR }}</td>
                         </tr>
                         <tr>
                             <td>Democrat</td>
-                            <td id="de1"></td>
-                            <td id="de2"></td>
+                            <td>{{numberDem.length}}</td>
+                            <td >{{statistics.voteAveragePartyD }}</td>
                         </tr>
                         <tr>
                             <td>Independent</td>
-                            <td id="in1"></td>
-                            <td id="in2"></td>
+                            <td>{{numberInd.length}}</td>
+                            <td>/</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <h2>Least Engaged (Bottom 10% Attendance)</h2>
+             <h2>Least Engaged (Bottom 10% Attendance)</h2>
                 <table id="table2" class="table table-striped">
                     <thead>
                         <tr>
@@ -99,7 +99,15 @@
                             <th>% Missed</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  >
+                             <tr v-for="value in lessmissed">
+
+                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                <td>{{value.missed_votes}}</td>
+                               <td>{{value.missed_votes_pct}}</td>
+                                
+                             
+                            </tr>
 
                     </tbody>
                 </table>
@@ -113,7 +121,15 @@
                             <th>% Missed</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
+                           <tr v-for="value in mostmissed">
+
+                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                <td>{{value.missed_votes}}</td>
+                               <td>{{value.missed_votes_pct}}</td>
+                                
+                             
+                            </tr>
 
                     </tbody>
                 </table>
@@ -122,10 +138,12 @@
             <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
         </div>
     </div>
-    <script src="statisticsSenate.js">
+        </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
+    <script src="StatisticsVUE.js"></script>
+        
 
-    </script>
 </body>
 
 </html>

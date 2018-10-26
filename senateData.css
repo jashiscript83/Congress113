@@ -3,24 +3,27 @@ body {
     grid-template-columns: 1fr 20fr 1fr;
     grid-template-rows: 1fr 80fr 1fr;
 }
-.loading-bar{
-    display:none;
-    position:fixed;
-    z-index:1000;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
+
+.loading-bar {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-image: url(giphy.gif);
-    background-position:50% 50%;
-    background-color:aliceblue;
-    background-repeat:no-repeat;
-    
+    background-position: 50% 50%;
+    background-color: gainsboro;
+    background-repeat: no-repeat;
+
 }
-body.loading{
+
+body.loading {
     overflow: hidden;
 }
-body.loading .loading-bar{
+
+body.loading .loading-bar {
     display: block;
 }
 
