@@ -61,77 +61,97 @@
             </div>
 
             <div class="info">
-                <h2>Party Loyalty</h2>
-                <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+                <div class="rowA">
+                    <div class="paragraph">
+                        <h2>Party Loyalty</h2>
+                        <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
 
-                <h2>Senate at a glance</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Party</th>
-                            <th>Number of Members</th>
-                            <th>% Voted with Party</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Republican</td>
-                            <td>{{numberRep.length}}</td>
-                            <td>{{statistics.voteAveragePartyR }}</td>
-                        </tr>
-                        <tr>
-                            <td>Democrat</td>
-                            <td>{{numberDem.length}}</td>
-                            <td>{{statistics.voteAveragePartyD }}</td>
-                        </tr>
-                        <tr>
-                            <td>Independent</td>
-                            <td>{{numberInd.length}}</td>
-                            <td>/</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    </div>
+                    <div class="loading-bar">
+                        <h2>“Conformity is the jailer of freedom and the enemy of growth.” John F. Kennedy, 1961.</h2>
+                    </div>
 
-                <h2>Least Loyal (Bottom 10% of Party)</h2>
-                <table class="table table-striped" id="tableloyal">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Number Party Votes</th>
-                            <th>% Party Votes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="value in lessloyalty">
+                    <div class="table1">
+                        <h2>Senate at a glance</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Party</th>
+                                    <th>Number of Members</th>
+                                    <th>% Voted with Party</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Republican</td>
+                                    <td>{{numberRep.length}}</td>
+                                    <td>{{statistics.voteAveragePartyR }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Democrat</td>
+                                    <td>{{numberDem.length}}</td>
+                                    <td>{{statistics.voteAveragePartyD }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Independent</td>
+                                    <td>{{numberInd.length}}</td>
+                                    <td>/</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>{{numberRep.length + numberDem.length + numberInd.length}}</td>
 
-                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
-                            <td>{{value.total_votes}}</td>
-                            <td>{{value.votes_with_party_pct}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="rowB">
+                    <div class="tableflex2">
+
+                        <h2>Least Loyal (Bottom 10% of Party)</h2>
+                        <table class="table table-striped" id="tableloyal">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Number Party Votes</th>
+                                    <th>% Party Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="value in lessloyalty">
+
+                                    <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                    <td>{{value.total_votes}}</td>
+                                    <td>{{value.votes_with_party_pct}}</td>
 
 
-                        </tr>
+                                </tr>
 
-                    </tbody>
-                </table>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tableflex3">
+                        <h2>Most Loyal (Top 10% of Party)</h2>
+                        <table class="table table-striped" id="tableMloyal">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Number Party Votes</th>
+                                    <th>% Party Votes</th>
+                                </tr>
+                            </thead>
+                            <tr v-for="value in moreloyalty">
 
-                <h2>Most Loyal (Top 10% of Party)</h2>
-                <table class="table table-striped" id="tableMloyal">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Number Party Votes</th>
-                            <th>% Party Votes</th>
-                        </tr>
-                    </thead>
-                     <tr v-for="value in moreloyalty">
+                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                <td>{{value.total_votes}}</td>
+                                <td>{{value.votes_with_party_pct}}</td>
 
-                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
-                            <td>{{value.total_votes}}</td>
-                            <td>{{value.votes_with_party_pct}}</td>
+                            </tr>
 
-                        </tr>
-
-                </table>
+                        </table>
+                    </div>
+                </div>
             </div>
             <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
         </div>

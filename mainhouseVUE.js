@@ -9,7 +9,6 @@ var app = new Vue({
         chamber: ""
     },
     created: function () {
-        console.log(this)
         document.body.className = "loading";
         this.geturl();
         this.getData();
@@ -44,7 +43,6 @@ var app = new Vue({
 
             }).then(function (json) {
 
-                console.log(this);
                 data = json;
                 console.log(3);
                 console.log(data);
@@ -63,7 +61,6 @@ var app = new Vue({
             var count = 0;
             var found = false;
             this.members = this.membersoriginal;
-            console.log(this.members)
             this.membersFiltered = [];
             var option = document.getElementById("option")
             var input = document.querySelectorAll('input[name="party"]:checked');

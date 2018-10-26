@@ -11,7 +11,7 @@ var app = new Vue({
         lessloyalty: [],
         mostmissed: [],
         lessmissed: [],
-        averagefinal:0,
+        averagefinal: 0,
         z: [],
         tenpercent: [],
         statistics: {
@@ -26,7 +26,7 @@ var app = new Vue({
             "lessVotesMissed": 0,
 
         },
-        
+
         least: [],
         most: [],
         loyalL: [],
@@ -35,9 +35,9 @@ var app = new Vue({
         chamber: "",
 
     },
-    created: function () {        
+    created: function () {
         document.body.className = "loading";
-        
+
         this.geturl();
         this.comparecall();
     },
@@ -56,66 +56,62 @@ var app = new Vue({
 
         comparecall: function () {
 
-           
-                fetch("https://api.propublica.org/congress/v1/113/" + this.chamber + "/members.json", {
-                    method: "GET",
-                    headers: {
-                        'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
 
-                    }
+            fetch("https://api.propublica.org/congress/v1/113/" + this.chamber + "/members.json", {
+                method: "GET",
+                headers: {
+                    'X-API-Key': '7UNgDQHuH7sJ5DMi1JLleOJDAPEHVVBOR6bqrkB0'
 
-                }).then(function (response) {
-                    if (response.ok) {
-                        console.log(2);
+                }
 
-                        return response.json();
+            }).then(function (response) {
+                if (response.ok) {
+                    console.log(2);
 
-                    }
+                    return response.json();
 
-                }).then(function (json) {
+                }
 
-
-                    data = json;
-                    console.log(3);
-                    console.log(data);
-                    document.body.className = "";
-                    app.members = data.results[0].members;
-
-                    
-                    app.z = app.members.length * 0.1;
-                    
-                   app.tenpercent = Math.round(app.z);
-
-                    app.allStatistics();
-                    
-                    app.statistics.voteAveragePartyD = app.getSum(app.numberDem);
-                    app.statistics.voteAveragePartyR = app.getSum(app.numberRep);
-                    
-                     
-                    
-                    
-
-                    app.Mostloyalty();
-                    app.statistics.Mostloyalty = app.moreloyalty;
-                    app.Lessloyal();
-                    app.statistics.lessLoyalty = app.lessloyalty;
-                    app.mostmiss();
-                    app.statistics.mostVotesMissed = app.mostmissed;
-                    app.lessmiss();
-                    app.statistics.lessVotesMissed = app.lessmissed;
-                   
-
-                    app.least = app.statistics.lessVotesMissed;
-                    app.most = app.statistics.mostVotesMissed;
-                    app.loyalL = app.statistics.lessLoyalty;
-                    app.loyalM = app.statistics.Mostloyalty;
+            }).then(function (json) {
 
 
-                }).catch(function (error) {
-                    console.log("Request failed:" + error.message);
-                });
+                data = json;
+                console.log(3);
+                document.body.className = "";
+                app.members = data.results[0].members;
 
-            
+
+                app.z = app.members.length * 0.1;
+
+                app.tenpercent = Math.round(app.z);
+
+                app.allStatistics();
+
+                app.statistics.voteAveragePartyD = app.getSum(app.numberDem);
+                app.statistics.voteAveragePartyR = app.getSum(app.numberRep);
+
+
+                app.Mostloyalty();
+                app.statistics.Mostloyalty = app.moreloyalty;
+                app.Lessloyal();
+                app.statistics.lessLoyalty = app.lessloyalty;
+                app.mostmiss();
+                app.statistics.mostVotesMissed = app.mostmissed;
+                app.lessmiss();
+                app.statistics.lessVotesMissed = app.lessmissed;
+
+
+                app.least = app.statistics.lessVotesMissed;
+                app.most = app.statistics.mostVotesMissed;
+                app.loyalL = app.statistics.lessLoyalty;
+                app.loyalM = app.statistics.Mostloyalty;
+
+
+            }).catch(function (error) {
+                console.log("Request failed:" + error.message);
+            });
+
+
 
 
         },
@@ -155,7 +151,7 @@ var app = new Vue({
                 x = averageD / array.length
                 this.averagefinal = Math.round(x);
             }
-            console.log(this.averagefinal)
+
             return this.averagefinal;
 
         },
@@ -248,8 +244,8 @@ var app = new Vue({
         },
         lessmiss: function () {
 
-        var orderMembers = this.members.slice(0)
-           orderMembers.sort(function (a, b) {
+            var orderMembers = this.members.slice(0)
+            orderMembers.sort(function (a, b) {
                 return a.missed_votes_pct - b.missed_votes_pct;
 
             });
@@ -260,7 +256,7 @@ var app = new Vue({
 
                 this.lessmissed.push(missless)
             }
-            console.log(this.mostmissed)
+
             for (var j = 0; j < this.members.length; j++) {
                 var x = this.members[j].missed_votes_pct
 

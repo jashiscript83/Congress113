@@ -146,3 +146,44 @@ nav {
     text-align: center;
     font-family: cursive;
 }
+
+.rowA {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+
+}
+
+.table1 {
+    width: 80%;
+    margin-left: 5%;
+}
+
+.paragraph {
+    width: 100%;
+
+}
+
+.rowB {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: space-around;
+
+}
+
+.tableflex2 {
+    width: 80%;
+    margin-right: 2%;
+}
+
+.tableflex3 {
+    width: 80%;
+    margin-left: 2%;
+}
+.loading-bar h2{
+    color:red;
+    text-align: center;
+}

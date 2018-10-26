@@ -11,138 +11,157 @@
 
 </head>
 
-<body >
+<body>
     <div id="app" class="all">
-    <div id="SenatePage">
-        <div class="container">
-            <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
-            <div class="middle">
-                <div class="text">
-                    <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+        <div id="SenatePage">
+            <div class="container">
+                <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text">
+                        <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="block">
-            <div class="nav">
-                <nav class="navbar navbar-default">
-                    <ul class="nav navbar-nav">
+            <div class="block">
+                <div class="nav">
+                    <nav class="navbar navbar-default">
+                        <ul class="nav navbar-nav">
 
-                        <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
-                        <li>
-                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Congress 113</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
-                                <li><a class="dropdown-item" href="house-starter-page.html">House</a></li>
-                            </ul>
-                        </li>
-
-
-                        <li class="active">
-                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="active" class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
-                                <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
-                                <li><a class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li><a class="butt" class="btn btn-secondary dropdown-toggle" href="home-starter-page.html">Home</a></li>
+                            <li>
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Congress 113</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="senate-starter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="house-starter-page.html">House</a></li>
+                                </ul>
+                            </li>
 
 
-                </nav>
+                            <li class="active">
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="active" class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Party Loyalty</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="senateLoyaltyStarter-page.html">Senate</a></li>
+                                    <li><a class="dropdown-item" href="housePartyLoyaltyStarter-page.html">House</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                    </nav>
+                </div>
+
+                <div class="info">
+                    <div class="rowA">
+                        <div class="paragraph">
+                            <h2>Attendance</h2>
+                            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+
+                            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+                        </div>
+                        <div class="loading-bar">
+                            <h2>“Conformity is the jailer of freedom and the enemy of growth.” John F. Kennedy, 1961.</h2>
+                        </div>
+
+                        <div class="table1">
+                            <h2>Senate at a glance</h2>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Party</th>
+                                        <th>Number of Members</th>
+                                        <th>% Voted with Party</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Republican</td>
+                                        <td>{{numberRep.length}}</td>
+                                        <td>{{statistics.voteAveragePartyR }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Democrat</td>
+                                        <td>{{numberDem.length}}</td>
+                                        <td>{{statistics.voteAveragePartyD }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Independent</td>
+                                        <td>{{numberInd.length}}</td>
+                                        <td>/</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>{{numberRep.length + numberDem.length + numberInd.length}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="rowB">
+                        <div class="tableflex2">
+                            <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                            <table id="table2" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Number of Missed Votes</th>
+                                        <th>% Missed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="value in lessmissed">
+
+                                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                        <td>{{value.missed_votes}}</td>
+                                        <td>{{value.missed_votes_pct}}</td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tableflex3">
+                            <h2>Most Engaged (Top 10% Attendance)</h2>
+                            <table class="table table-striped" id="table3">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Number of Missed Votes</th>
+                                        <th>% Missed</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="value in mostmissed">
+
+                                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                        <td>{{value.missed_votes}}</td>
+                                        <td>{{value.missed_votes_pct}}</td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
             </div>
-
-            <div class="info">
-                <h2>Attendance</h2>
-                <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
-
-                <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
-
-                <h2>Senate at a glance</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Party</th>
-                            <th>Number of Members</th>
-                            <th>% Voted with Party</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Republican</td>
-                            <td>{{numberRep.length}}</td>
-                            <td>{{statistics.voteAveragePartyR }}</td>
-                        </tr>
-                        <tr>
-                            <td>Democrat</td>
-                            <td>{{numberDem.length}}</td>
-                            <td >{{statistics.voteAveragePartyD }}</td>
-                        </tr>
-                        <tr>
-                            <td>Independent</td>
-                            <td>{{numberInd.length}}</td>
-                            <td>/</td>
-                        </tr>
-                    </tbody>
-                </table>
-             <h2>Least Engaged (Bottom 10% Attendance)</h2>
-                <table id="table2" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Number of Missed Votes</th>
-                            <th>% Missed</th>
-                        </tr>
-                    </thead>
-                    <tbody  >
-                             <tr v-for="value in lessmissed">
-
-                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
-                                <td>{{value.missed_votes}}</td>
-                               <td>{{value.missed_votes_pct}}</td>
-                                
-                             
-                            </tr>
-
-                    </tbody>
-                </table>
-
-                <h2>Most Engaged (Top 10% Attendance)</h2>
-                <table class="table table-striped" id="table3">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Number of Missed Votes</th>
-                            <th>% Missed</th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                           <tr v-for="value in mostmissed">
-
-                                <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
-                                <td>{{value.missed_votes}}</td>
-                               <td>{{value.missed_votes_pct}}</td>
-                                
-                             
-                            </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-            <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
         </div>
     </div>
-        </div>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
     <script src="StatisticsVUE.js"></script>
-        
+
 
 </body>
 
