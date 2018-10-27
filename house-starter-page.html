@@ -15,11 +15,15 @@
 <body>
     <div id="app" class="allH">
         <div id="HousePage">
-            <div class="container">
-                <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
-                <div class="middle">
-                    <div class="text">
-                        <a href="https://www.congress.gov/"><p>TGIF</p> </a><a href="mailto:info@tgif.com">EMAIL US</a>
+            <div class="head">
+                <div class="container">
+                    <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                        <div class="text">
+                            <a href="https://www.congress.gov/">
+                                <p>TGIF</p>
+                            </a><a href="mailto:info@tgif.com">EMAIL US</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,7 +78,7 @@
                         </div>
 
                         <label>Filter by State </label>
-                        <select  @change="createFilter" name="party" id="select">
+                        <select @change="createFilter" name="party" id="select">
 
                             <option id="option">ALL</option>
 
