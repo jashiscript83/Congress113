@@ -69,7 +69,6 @@ var app = new Vue({
             this.membersFiltered = [];
             var option = document.getElementById("option")
             var input = document.querySelectorAll('input[name="party"]:checked');
-
             var select = document.getElementById("select")
 
 

@@ -18,7 +18,7 @@ body {
     height: 100%;
     background-image: url(giphy.gif);
     background-position: 50% 50%;
-    background-color: gainsboro;
+    background-color: #a6adbd;
     background-repeat: no-repeat;
 
 }
@@ -116,14 +116,9 @@ body.loading .loading-bar {
 
 body {
 
-    background-color: gainsboro;
+    background-color: #a6adbd;
 }
 
-nav {
-    background-color: blue;
-
-
-}
 
 .butt {
 
@@ -191,9 +186,32 @@ nav {
     color:red;
     text-align: center;
 }
-.CongressBackground {
-    
-    
-    
+
+h2{
+    color: #834442;
+}
+button{
+    color: #834442;
+}
+
+.dropdown-menu{
+    background-color: #834442;
   
+ 
+}
+a{
+     color:blue;
+}
+td{
+         color: maroon;
+}
+nav a {
+    color:beige;
+}
+.names{
+    color:darkblue;
+}
+audio{
+    width: 20%;
+ height: 50%;
 }

@@ -12,17 +12,18 @@
 
 </head>
 
-<body id="SenatePage">
+<body>
 
 
 
     <div id="app" class="all">
-
+       <div  id="SenatePage" >
         <div class="container">
+            
             <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle">
                 <div class="text">
-                    <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                    <a href="https://www.congress.gov/"><p>TGIF</p></a> <a href="mailto:info@tgif.com">EMAIL US</a>
                 </div>
             </div>
         </div>
@@ -104,8 +105,10 @@
 
 
                                 <td>
-                                    <a v-bind:href=" value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                    <a v-bind:href=" value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}
                                 </a>
+                                </td>
+                                
                                 <td>{{value.party}}</td>
                                 <td>{{value.state}}</td>
                                 <td>{{value.seniority}}</td>
@@ -119,7 +122,9 @@
             </div>
 
             <p class="rights" class="navbar navbar-default">2016 TGIF/All Rights Reserved</p>
+
         </div>
+    </div>
     </div>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 

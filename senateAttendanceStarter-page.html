@@ -18,7 +18,7 @@
                 <img src="eagle.png" alt="Avatar" class="image" style="width:100%">
                 <div class="middle">
                     <div class="text">
-                        <p>TGIF</p><a href="mailto:info@tgif.com">EMAIL US</a>
+                        <a href="https://www.congress.gov/"><p>TGIF</p> </a><a href="mailto:info@tgif.com">EMAIL US</a>
                     </div>
                 </div>
             </div>
@@ -37,10 +37,10 @@
                             </li>
 
 
-                            <li class="active">
+                            <li >
                                 <a class="butt" class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" href="#">Attendance</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="active" class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
+                                    <li class="active"><a  class="dropdown-item" href="senateAttendanceStarter-page.html">Senate</a></li>
                                     <li><a class="dropdown-item" href="houseAttendanceStarter-page.html">House</a></li>
                                 </ul>
                             </li>
@@ -81,22 +81,22 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Republican</td>
+                                        <td class="names">Republican</td>
                                         <td>{{numberRep.length}}</td>
                                         <td>{{statistics.voteAveragePartyR }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Democrat</td>
+                                        <td class="names">Democrat</td>
                                         <td>{{numberDem.length}}</td>
                                         <td>{{statistics.voteAveragePartyD }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Independent</td>
+                                        <td class="names">Independent</td>
                                         <td>{{numberInd.length}}</td>
                                         <td>/</td>
                                     </tr>
                                     <tr>
-                                        <td>Total</td>
+                                        <td class="names">Total</td>
                                         <td>{{numberRep.length + numberDem.length + numberInd.length}}</td>
 
                                     </tr>
@@ -118,7 +118,7 @@
                                 <tbody>
                                     <tr v-for="value in lessmissed">
 
-                                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                        <td class="names">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
                                         <td>{{value.missed_votes}}</td>
                                         <td>{{value.missed_votes_pct}}</td>
 
@@ -141,7 +141,7 @@
                                 <tbody>
                                     <tr v-for="value in mostmissed">
 
-                                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                                        <td class="names">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
                                         <td>{{value.missed_votes}}</td>
                                         <td>{{value.missed_votes_pct}}</td>
 
