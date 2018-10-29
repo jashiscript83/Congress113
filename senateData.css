@@ -1,3 +1,4 @@
+
 body {
     display: grid;
     grid-template-columns: 1fr 20fr 1fr;
@@ -227,4 +228,7 @@ audio{
     font-size: 16px;
     font-variant-caps:petite-caps;
    
+}
+#more {
+    display: none;
 }

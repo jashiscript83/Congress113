@@ -6,12 +6,15 @@ var app = new Vue({
         uniqueState: [],
         members: [],
         membersoriginal: [],
-        chamber: ""
+        chamber: "",
+
     },
     created: function () {
         document.body.className = "loading";
         this.geturl();
         this.getData();
+
+
 
     },
     methods: {
@@ -142,6 +145,11 @@ var app = new Vue({
 
             }
 
-        }
+        },
+
+
+
+
+
     }
 })
